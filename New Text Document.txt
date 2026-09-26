@@ -1,0 +1,23 @@
+insert into public.rt2_profiles
+(
+    id,
+    role,
+    display_name,
+    username,
+    active
+)
+values
+(
+    'a044ba02-9819-4d49-8e6f-2aa4614be284',
+    'ceo',
+    'Rami Mokhtar',
+    'ceo',
+    true
+)
+on conflict (id)
+do update set
+    role = 'ceo',
+    display_name = 'Rami Mokhtar',
+    username = 'ceo',
+    active = true,
+    updated_at = now();
